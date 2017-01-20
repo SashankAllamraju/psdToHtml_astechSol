@@ -1,0 +1,201 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  height:100%;
+  background: -webkit-linear-gradient(to top, #c4f065, white 37%) fixed no-repeat;
+  background: -o-linear-gradient(to top, #c4f065, white 37%) fixed no-repeat;
+  background: linear-gradient(to top, #c4f065, white 37%) fixed no-repeat;
+  font-family: 'PT Sans', sans-serif;
+}
+
+img,
+embed,
+object,
+video {
+	max-width: 100%;
+	min-width: 0px;
+	height: auto;
+	object-fit: contain;
+}
+
+.container {
+	max-width: 960px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+header {
+	width: 100%;
+  height: 90px;
+  clear: both;
+}
+
+header .logo {
+  float: left;
+  display: block;
+	margin: 2px auto 10px 2px;
+	text-align: left;
+}
+
+header .top-right-menu ul {
+  float: right;
+  width: 320px;
+  margin: 0 30px auto auto;
+  background: linear-gradient(to top, #a1d026, #49a10f 60%) no-repeat;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  /*text-align:justify*/
+  display: table;
+  table-layout: fixed; /* ensure equal width */
+  text-align: center;
+  /*margin: 0;*/
+  padding: 0;
+}
+
+ul > li {
+    display: table-cell;
+    text-align: center;
+}
+
+header .top-right-menu ul li a {
+  display: inline-block;
+  font-size: 14px;
+  color: white;
+  position: relative;
+  padding: 2px 5px 2px 5px;
+  height: 18px;
+}
+
+/* have to fix  navbar colors*/
+.navbar-default {
+  /*background-color: linear-gradient(to top, #8a8a8a, #d4d4d4 60%) no-repeat;*/
+  background-color: #d4d4d4;
+  color: #FFFFFF;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #FFFFFF;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #FFFFFF;
+    background-color: #49a10f;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #FFFFFF;
+    background-color: transparent;
+}
+
+#site-nav div ul li {
+  display: block;
+  border-right: 2px solid rgba(255,255,255,0.1);
+}
+
+.cover {
+  margin: 0 10px 0 10px;
+}
+
+.content {
+  margin: 10px 0 10px 0;
+}
+
+.cover .content #hpy-song {
+  background: -webkit-linear-gradient(to top, #c4f065, white 37%) fixed no-repeat;
+  background: -o-linear-gradient(to top, #c4f065, white 37%) fixed no-repeat;
+  background: linear-gradient(to top, #c4f065, white 37%) fixed no-repeat;
+}
+
+.content #hpy-song #hpy-song-header {
+
+}
+
+.content #hpy-song #hpy-song-header img {
+  position: absolute;
+  z-index: 1; /* integer */
+  padding-left: 0;
+
+}
+
+.content #hpy-song #hpy-song-header h3{
+  font-size: 23px;
+  font-weight: 700;
+  margin: 23px 10px 0 65px;
+  padding: 4px 0 4px 0;
+  text-align: center;
+  background: linear-gradient(to top, #a1d026, #49a10f 60%) no-repeat;
+  color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #11b500;
+}
+
+.content #hpy-song #hpy-song-firstPara,
+.content #hpy-song #hpy-song-chorus-1,
+.content #hpy-song #hpy-song-chorus-2 {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 10px 10px 0 10px;
+}
+
+.content #hpy-song #hpy-song-chorus-1 .text-right p,
+.content #hpy-song #hpy-song-chorus-2 .text-right p {
+  text-align: right;
+}
+
+.content #hpy-song #hpy-song-chorus-1 .text-left p,
+.content #hpy-song #hpy-song-chorus-2 .text-left p {
+  text-align: left;
+}
+
+.content #hpy-song #hpy-song-sing-along {
+  margin: 50px auto 10px auto;
+}
+
+.content #hpy-song #hpy-song-sing-along #winamp-sing-along img {
+  position: absolute;
+  z-index: 1; /* integer */
+  top: 0; bottom:80px; left: 0; right:0;
+  margin: auto;
+}
+
+.content #hpy-song #hpy-song-sing-along #winamp-sing-along p {
+  font-size: 18px;
+  font-weight: 700;
+  color: #7b7b7b;
+  text-transform: uppercase;
+}
+
+.content #hpy-song #hpy-song-sing-along #left-music img {
+  position: absolute;
+  float: right;
+  padding: 0 0 50px 0;
+}
+
+.content #hpy-song #hpy-song-sing-along #right-music img {
+  position: absolute;
+  float: left;
+}
+
+#map {
+  height: 500px;
+  margin-top: 50px;
+}
+
+footer {
+  width: 100%;
+  clear: both;
+	height: 35px;
+  background: linear-gradient(to top, #9d9d9d, #dbdbdb 50%) no-repeat;
+  padding-left: 20px;
+  padding-top: 10px;
+  color: white;
+  font-size: 12px;
+  font-weight: 400;
+}
