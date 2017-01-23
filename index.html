@@ -10,147 +10,128 @@
     <!-- alternative font for myriad pro -->
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
     <!-- local CSS -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="./js/bootstrap.min.js"></script>
   </head>
   <body>
     <div class="container">
-      <!-- site header start -->
-      <header>
-        <div class="logo">
-          <a href=""><img src="images/logo.png" alt="HPY logo on top left"></a>
-        </div>
-        <div class="top-right-menu">
-          <ul class="navbar-nav">
+      <!-- header start -->
+      <header class="row">
+        <div id="top-right-menu" class="col-md-4">
+          <ul class="nav nav-pills nav-justified collapse in">
             <li><a href="">Set as Homepage</a></li>
             <li><a href="">Add as Bookmark</a></li>
             <li><a href="">Share</a></li>
           </ul>
         </div>
-      </header>
-      <!-- site header end -->
-      <!-- site menu start -->
-      <nav id="site-nav" class="navbar navbar-default">
-        <div class="container-fluid">
-          <!-- menu items - start -->
-          <!-- menu collapse - start -->
-          <div class="x">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-          </div>
-          <!-- menu collapse - end -->
-          <div id="mainNavBar" class="collapse navbar-collapse">
-            <ul id="main-menu" class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">HPY 2011</a></li>
-              <li><a href="#">Mentoring</a></li>
-              <li><a href="#">Database</a></li>
-              <li><a href="#">Gallery</a></li>
-              <li><a href="#">Contact Us</a></li>
-            </ul>
-          </div>
-          <!-- menu items - end -->
+
+        <div id="collapsed" class="col-md-2">
+          <!-- sub-menu collapse - start -->
+          <button class="btn" type="button" data-toggle="collapse" data-target="#top-right-menu" aria-expanded="false" aria-controls="top-right-menu">
+            <span class="glyphicon glyphicon-cog"></span>
+          </button>
+          <!-- sub-menu collapse - end -->
+          <!-- main-menu collapse - start -->
+          <button class="btn" type="button" data-toggle="collapse" data-target="#main-menu" aria-expanded="false" aria-controls="main-menu">
+            <span class="glyphicon glyphicon-align-justify"></span>
+          </button>
+          <!-- main-menu collapse - end -->
         </div>
+
+        <div id="logo" class="col-md-4">
+          <img src="images/logo.png" alt="logo">
+        </div>
+      </header>
+      <!-- header end -->
+      <!-- main menu start -->
+      <nav class="row">
+        <ul id="main-menu" class="nav nav-pills nav-justified collapse in">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">HPY 2011</a></li>
+          <li><a href="#">Mentoring</a></li>
+          <li><a href="#">Database</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
       </nav>
-      <!-- site menu end -->
-      <!-- spotlight image-slider start -->
-      <div class="cover row">
-        <div class="col-sm-12">
-          <div id="my-slider" class="carousel slide">
-            <!-- indicators dot nav-->
+      <!-- main menu end -->
+      <!-- image slider start -->
+      <div id="img-slider" class="row">
+        <div class="col-md-12">
+          <div id="my-slider" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
             <ol class="carousel-indicators">
               <li data-target="#my-slider" data-slide-to="0" class="active"></li>
               <li data-target="#my-slider" data-slide-to="1"></li>
               <li data-target="#my-slider" data-slide-to="2"></li>
             </ol>
 
-            <!-- wrapper for slides - start -->
-            <div class="carousel-inner">
-              <!-- image 1 -->
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
               <div class="item active">
-                <picture>
-                  <source media="(min-width: 769px)" srcset="http://placehold.it/940x360, http://placehold.it/1880x720 2x">
-                  <source media="(min-width: 481px)" srcset="http://placehold.it/768x440, http://placehold.it/1536x880 2x">
-                  <img src="http://placehold.it/470x180" srcset="http://placehold.it/940x360 2x, http://placehold.it/1410x540 3x, http://placehold.it/1880x720 4x" alt="Image 1" class="img-responsive">
-                </picture>
-                <div class="carousel-caption">
-                  <h1>Image 1</h1>
-                </div>
+                <img src="http://placehold.it/1880x720" alt="Image 1" class="img-responsive">
+                <div class="carousel-caption"></div>
               </div>
-              <!-- image 2 -->
               <div class="item">
-                <picture>
-                  <source media="(min-width: 769px)" srcset="http://placehold.it/940x360, http://placehold.it/1880x720 2x">
-                  <source media="(min-width: 481px)" srcset="http://placehold.it/768x440, http://placehold.it/1536x880 2x">
-                  <img src="http://placehold.it/470x180" srcset="http://placehold.it/940x360 2x, http://placehold.it/1410x540 3x, http://placehold.it/1880x720 4x" alt="Image 2" class="img-responsive">
-                </picture>
-                <div class="carousel-caption">
-                  <h1>Image 2</h1>
-                </div>
+                <img src="http://placehold.it/1880x720" alt="Image 2" class="img-responsive">
+                <div class="carousel-caption"></div>
               </div>
-              <!-- image 3 -->
               <div class="item">
-                <picture>
-                  <source media="(min-width: 769px)" srcset="http://placehold.it/940x360, http://placehold.it/1880x720 2x">
-                  <source media="(min-width: 481px)" srcset="http://placehold.it/768x440, http://placehold.it/1536x880 2x">
-                  <img src="http://placehold.it/470x180" srcset="http://placehold.it/940x360 2x, http://placehold.it/1410x540 3x, http://placehold.it/1880x720 4x" alt="Image 3" class="img-responsive">
-                </picture>
-                <div class="carousel-caption">
-                  <h1>Image 3</h1>
-                </div>
+                <img src="http://placehold.it/1880x720" alt="Image 3" class="img-responsive">
+                <div class="carousel-caption"></div>
               </div>
             </div>
-            <!-- wrapper for slides - end -->
-            <!-- controls - next/prev buttons - start -->
-            <div>
-              <a class="carousel-control left" href="#my-slider" data-slide="prev">
-                <span class="icon-prev"></span>
-              </a>
-              <a class="carousel-control right" href="#my-slider" data-slide="next">
-                <span class="icon-next"></span>
-              </a>
-            </div>
-            <!-- controls - next/prev buttons - end -->
-      </div>
-      <!-- spotlight image-slider end -->
-      <!-- content area start -->
-      <div class="content row">
-        <div id="hpy-song" class="cell col-md-4">
-          <div class="row">
-            <div id="hpy-song-header" class="col-xs-12">
-              <img src="images/headphones.png" alt="">
-              <h3>HPY SONG</h3>
-            </div>
-          </div>
 
-          <div id="hpy-song-firstPara" class="row">
-            <div>
-              <p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500,
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also into the electronic typesetting, remaining essentially </p>
+            <!-- Controls -->
+            <a class="left carousel-control" href="#my-slider" role="button" data-slide="prev">
+              <span class="icon-prev" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#my-slider" role="button" data-slide="next">
+              <span class="icon-next" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+
+          </div>
+        </div>
+      </div>
+      <!-- image slider end -->
+      <!-- content start -->
+      <div id="content" class="row">
+        <div id="hpy-song" class="col-md-4">
+          <!-- everything in left column - start -->
+          <div id="heading-hpy-song" class="row">
+            <img class="img-responsive" src="images/headphones.png" alt="">
+            <h3>HPY SONG</h3>
+          </div>
+          <div class="row">
+            <div id="para-1" class="col-md-12">
+              <p></p>
             </div>
           </div>
-          <div id="hpy-song-chorus-1" class="row">
-            <div class="col-xs-5 text-right">
-              <p>Chorus :</p>
+          <div id="chorus-1" class="row">
+            <div class="col-md-5 chorus-title">
+              <p></p>
             </div>
-            <div class="col-xs-7 text-left">
-              <p>was popularised in the 1960s the  release of Letraset sheets containing Lorem Ipsum pass, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            </div>
-          </div>
-          <div id="hpy-song-chorus-2" class="row">
-            <div class="col-xs-5 text-right">
-              <p>Chorus :</p>
-            </div>
-            <div class="col-xs-7 text-left">
-              <p>was popularised in the 1960s the  release of Letraset sheets containing Lorem Ipsum pass, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."</p>
+            <div class="col-md-7 chorus-text">
+              <p></p>
             </div>
           </div>
-          <div id="hpy-song-sing-along" class="row">
+          <div id="chorus-2" class="row">
+            <div class="col-md-5 chorus-title">
+              <p></p>
+            </div>
+            <div class="col-md-7 chorus-text">
+              <p></p>
+            </div>
+          </div>
+          <div id="sing-along" class="row">
             <div id="left-music" class="col-xs-3">
               <img src="images/sing-along.png" alt="sing along">
             </div>
@@ -162,27 +143,25 @@
               <img src="images/sing-along.png" alt="sing along">
             </div>
           </div>
+          <!-- everything in left column - end -->
         </div>
         <!-- google map directions - start -->
-        <div id="map" class="cell col-md-8"></div>
+        <div id="map" class="col-md-8"></div>
         <!-- google map directions - end -->
       </div>
       <!-- footer start -->
-      <footer id="site-footer">
-        <p>HPY India.com  2010 I All Rights Reserved</p>
+      <footer class="row">
+          <p>HPY India.com  2010 I All Rights Reserved</p>
       </footer>
       <!-- footer end -->
     </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
     <!-- load JS script -->
-    <script>
+   <script>
       // google map directions API
       function initMap(){
         var directionsService = new google.maps.DirectionsService;
-        var directionsDisplay = new google.maps.DirectionsRenderer;
+        var directionsDisplay = new google.maps.DirectionsRenderer({ 'draggable': true });
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 12,
           center: {lat: 19.021335, lng: 72.842255}
@@ -196,16 +175,40 @@
         directionsService.route({
           origin: 'Chhatrapati Shivaji Terminus',
           destination: 'Chhatrapati Shivaji International Airport',
-          travelMode: 'DRIVING'
-        }, function(response, status) {
-          if (status === 'OK') {
-            directionsDisplay.setDirections(response);
-          } else {
-            window.alert('Directions request failed due to ' + status);
+          travelMode: google.maps.TravelMode.DRIVING,
+          unitSystem: google.maps.UnitSystem.METRIC,
+          provideRouteAlternatives: true,
+          avoidHighways: false,
+          avoidTolls: false,
+          drivingOptions: { // shows optimistic path under current traffic conditions
+            departureTime: new Date(Date.now()),
+            trafficModel: 'optimistic'
           }
+          }, function(response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+              directionsDisplay.setDirections(response);
+
+/************* alternate routes code to be fixed
+              for (var i = 0, len = response.routes.length; i < len; i++) {
+                new google.maps.DirectionsRenderer({
+                    map: new google.maps.Map(document.getElementById('map'), {
+                      zoom: 12,
+                      center: {lat: 19.021335, lng: 72.842255}
+                    }),
+                    directions: response,
+                    routeIndex: i
+                });
+              }
+*************/
+
+            } else {
+              window.alert('Unable to find the distance via road. Directions request failed due to - ' + status);
+            }
         });
       }
     </script>
+    <!-- load main.js script -->
+    <script src="./js/main.js"></script>
     <!-- google map init -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAa-coANjS2DlCeHXAjceDJ2vTYvNGLWEY&callback=initMap"></script>
   </body>

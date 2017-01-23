@@ -1,11 +1,21 @@
 body {
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
   height:100%;
-  background: -webkit-linear-gradient(to top, #c4f065, white 37%) fixed no-repeat;
-  background: -o-linear-gradient(to top, #c4f065, white 37%) fixed no-repeat;
-  background: linear-gradient(to top, #c4f065, white 37%) fixed no-repeat;
+  background: -webkit-linear-gradient(to top, #c4f065, transparent 37%) fixed no-repeat;
+  background: -o-linear-gradient(to top, #c4f065, transparent 37%) fixed no-repeat;
+  background: linear-gradient(to top, #c4f065, transparent 37%) fixed no-repeat;
+  /*to be fixed
+  background-image: url(images/body_background.png) center top no-repeat;
+  */
   font-family: 'PT Sans', sans-serif;
+}
+
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('../fonts/glyphicons-halflings-regular.eot');
+    src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
 }
 
 img,
@@ -19,183 +29,279 @@ video {
 }
 
 .container {
-	max-width: 960px;
-	margin-right: auto;
+  width: 960px;
+  margin-right: auto;
 	margin-left: auto;
 }
 
-header {
-	width: 100%;
-  height: 90px;
-  clear: both;
-}
-
-header .logo {
+#logo {
   float: left;
-  display: block;
-	margin: 2px auto 10px 2px;
-	text-align: left;
-}
-
-header .top-right-menu ul {
-  float: right;
-  width: 320px;
-  margin: 0 30px auto auto;
-  background: linear-gradient(to top, #a1d026, #49a10f 60%) no-repeat;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-  /*text-align:justify*/
-  display: table;
-  table-layout: fixed; /* ensure equal width */
-  text-align: center;
-  /*margin: 0;*/
   padding: 0;
+  margin: 10px 0 0 0;
 }
 
-ul > li {
-    display: table-cell;
-    text-align: center;
+#top-right-menu {
+  float: right;
+  background: linear-gradient(to top, #a1d026, #49a10f 60%) no-repeat;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding: 0;
+  margin: 0 30px 0 0;
 }
 
-header .top-right-menu ul li a {
-  display: inline-block;
+#top-right-menu .nav-pills>li>a:hover {
+    background: transparent;
+}
+
+#top-right-menu ul li a {
+  text-align: center;
   font-size: 14px;
   color: white;
-  position: relative;
-  padding: 2px 5px 2px 5px;
-  height: 18px;
+  padding: 0 0 2px 0;
 }
 
-/* have to fix  navbar colors*/
-.navbar-default {
-  /*background-color: linear-gradient(to top, #8a8a8a, #d4d4d4 60%) no-repeat;*/
-  background-color: #d4d4d4;
-  color: #FFFFFF;
+/* media queries for top right menu */
+@media only screen and (max-width: 768px) {
+  #top-right-menu {
+      float: none;
+      margin: 0;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      padding: 0 5px 0 5px;
+  }
 }
 
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-    color: #FFFFFF;
+@media only screen and (max-width: 768px) {
+  #top-right-menu ul li a {
+    font-size: 1.2em;
+  }
 }
 
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-    color: #FFFFFF;
-    background-color: #49a10f;
+@media only screen and (max-width: 480px) {
+  #top-right-menu ul li a {
+    font-size: 1.4em;
+  }
 }
 
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:hover,
-.navbar-default .navbar-nav > .open > a:focus {
-    color: #FFFFFF;
-    background-color: transparent;
+#collapsed {
+  display: inline-block;
+  z-index: 2;
+  float: right;
+  margin: 10px 0 0 auto;
 }
 
-#site-nav div ul li {
-  display: block;
-  border-right: 2px solid rgba(255,255,255,0.1);
-}
-
-.cover {
-  margin: 0 10px 0 10px;
-}
-
-.content {
+nav .nav-pills {
+  background: linear-gradient(to top, #8a8a8a, #d4d4d4 50%) no-repeat;
   margin: 10px 0 10px 0;
 }
 
-.cover .content #hpy-song {
-  background: -webkit-linear-gradient(to top, #c4f065, white 37%) fixed no-repeat;
-  background: -o-linear-gradient(to top, #c4f065, white 37%) fixed no-repeat;
-  background: linear-gradient(to top, #c4f065, white 37%) fixed no-repeat;
-}
-
-.content #hpy-song #hpy-song-header {
-
-}
-
-.content #hpy-song #hpy-song-header img {
-  position: absolute;
-  z-index: 1; /* integer */
-  padding-left: 0;
-
-}
-
-.content #hpy-song #hpy-song-header h3{
-  font-size: 23px;
-  font-weight: 700;
-  margin: 23px 10px 0 65px;
-  padding: 4px 0 4px 0;
-  text-align: center;
-  background: linear-gradient(to top, #a1d026, #49a10f 60%) no-repeat;
+nav .nav-pills li a {
   color: white;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #11b500;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 0px;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
 }
 
-.content #hpy-song #hpy-song-firstPara,
-.content #hpy-song #hpy-song-chorus-1,
-.content #hpy-song #hpy-song-chorus-2 {
+nav .nav-pills li:not(:last-child) a {
+  border-right: 1px solid white;
+}
+
+nav .nav-pills>li.active>a,
+nav .nav-pills>li.active>a:focus,
+nav .nav-pills>li.active>a:hover {
+  color: #fff;
+  background: linear-gradient(to top, #5ec946, #19a715 50%) no-repeat;
+  border: 2px outset #11b500;
+  -webkit-box-shadow: inset 0px 0px 2px 2px rgba(255,255,190,0.75);
+  -moz-box-shadow: inset 0px 0px 2px 2px rgba(255,255,190,0.75);
+  box-shadow: inset 0px 0px 2px 2px rgba(255,255,190,0.75);
+}
+
+nav .nav-pills>li>a:hover {
+  background-color: #6ec950;
+}
+
+/* media queries for main menu */
+@media only screen and (max-width: 768px) {
+    nav .nav-pills li a {
+        font-size: 2rem;
+    }
+
+    nav .nav-pills li:not(:last-child) a {
+      border-right: 0;
+    }
+}
+
+#img-slider {
+  color: white;
+}
+
+#content {
+  /*margin: 10px 0 10px 0;*/
+  border-left: 15px solid white;
+  border-right: 15px solid white;
+  border-top: 10px solid white;
+  border-bottom: 10px solid white;
+}
+
+#hpy-song {
+  background: linear-gradient(to top, #c0ee5f, white 50%) fixed no-repeat;
+  height: 500px;
+}
+
+#heading-hpy-song {
+  /*background: white;*/
+}
+
+#heading-hpy-song img {
+  float: left;
+  z-index: 1;
+
+}
+
+#heading-hpy-song h3 {
+  margin: 23px 20px 12px 70px;
+  text-align: center;
+  background: linear-gradient(to top, #5ec946, #19a715 50%) no-repeat;
+  color: white;
+  font-size: 22px;
+  font-weight: 700;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border: 2px outset #36c020;
+  border-radius: 1px;
+  -webkit-box-shadow: inset 0px 0px 2px 2px rgba(255,255,190,0.75);
+  -moz-box-shadow: inset 0px 0px 2px 2px rgba(255,255,190,0.75);
+  box-shadow: inset 0px 0px 2px 2px rgba(255,255,190,0.75);
+}
+
+#para-1,
+#chorus-1,
+#chorus-2 {
   font-size: 10px;
   font-weight: 700;
-  text-transform: uppercase;
+}
+
+#para-1 {
+  text-align: left;
   padding: 10px 10px 0 10px;
 }
 
-.content #hpy-song #hpy-song-chorus-1 .text-right p,
-.content #hpy-song #hpy-song-chorus-2 .text-right p {
+.chorus-title {
   text-align: right;
+  padding: 0;
 }
 
-.content #hpy-song #hpy-song-chorus-1 .text-left p,
-.content #hpy-song #hpy-song-chorus-2 .text-left p {
+.chorus-text {
   text-align: left;
+  padding: 0 10px 0 5px;;
 }
 
-.content #hpy-song #hpy-song-sing-along {
-  margin: 50px auto 10px auto;
+#left-music,
+#right-music {
+  margin: 60px auto 0 auto;
 }
 
-.content #hpy-song #hpy-song-sing-along #winamp-sing-along img {
+#winamp-sing-along {
+  margin: 70px auto 0 auto;
+}
+
+#left-music img {
+  text-align: right;
+  display: inline-block;
+  padding: 0 0 0 auto;
+}
+
+#winamp-sing-along img {
   position: absolute;
-  z-index: 1; /* integer */
+  z-index: 1;
   top: 0; bottom:80px; left: 0; right:0;
   margin: auto;
 }
 
-.content #hpy-song #hpy-song-sing-along #winamp-sing-along p {
-  font-size: 18px;
+#winamp-sing-along p {
+  text-align: center;
+  font-size: 19px;
   font-weight: 700;
   color: #7b7b7b;
-  text-transform: uppercase;
+
 }
 
-.content #hpy-song #hpy-song-sing-along #left-music img {
-  position: absolute;
-  float: right;
-  padding: 0 0 50px 0;
+/* media queries for HPY song content */
+@media only screen and (max-width: 768px) {
+  #heading-hpy-song h3 {
+    font-size: 1.5em;
+    margin: 23px 0 12px 70px;
+  }
+
+  #para-1,
+  #chorus-1,
+  #chorus-2 {
+    font-size: 1.1em;
+  }
+
+  .chorus-title {
+    text-align: center;
+  }
 }
 
-.content #hpy-song #hpy-song-sing-along #right-music img {
-  position: absolute;
-  float: left;
+@media only screen and (max-width: 480px) {
+  #heading-hpy-song h3 {
+    font-size: 1.8em;
+    margin: 23px 0 12px 70px;
+  }
+
+  #para-1,
+  #chorus-1,
+  #chorus-2 {
+    font-size: 1.25em;
+  }
+
+  .chorus-title {
+    text-align: center;
+  }
+
+  #winamp-sing-along p {
+    font-size: 1.8em;
+  }
 }
 
 #map {
   height: 500px;
-  margin-top: 50px;
+  border-left: 10px solid white;
+}
+
+/* media queries for map */
+@media only screen and (max-width: 768px) {
+  #map {
+    border-left: 0;
+    margin-top: 10px;
+  }
 }
 
 footer {
-  width: 100%;
-  clear: both;
-	height: 35px;
   background: linear-gradient(to top, #9d9d9d, #dbdbdb 50%) no-repeat;
-  padding-left: 20px;
-  padding-top: 10px;
-  color: white;
+  margin: 0;
+}
+
+footer p {
+  padding: 10px 10px 1px 20px;
   font-size: 12px;
   font-weight: 400;
+  color: white;
+}
+
+/* media queries for footer */
+@media only screen and (max-width: 768px) {
+  footer p {
+    font-size: 1.2em;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  footer p {
+    font-size: 1.5em;
+  }
 }
