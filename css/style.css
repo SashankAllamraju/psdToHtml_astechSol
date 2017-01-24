@@ -3,9 +3,13 @@ body {
   box-sizing: border-box;
   margin: 0;
   height:100%;
+  /*
   background: -webkit-linear-gradient(to top, #c4f065, transparent 37%) fixed no-repeat;
   background: -o-linear-gradient(to top, #c4f065, transparent 37%) fixed no-repeat;
-  background: linear-gradient(to top, #c4f065, transparent 37%) fixed no-repeat;
+  */
+  background:
+      url(../images/body_background.png) top center no-repeat,
+      linear-gradient(to top, #c4f065, transparent 37%) fixed no-repeat;
   /*to be fixed
   background-image: url(images/body_background.png) center top no-repeat;
   */
@@ -16,6 +20,11 @@ body {
     font-family: 'Glyphicons Halflings';
     src: url('../fonts/glyphicons-halflings-regular.eot');
     src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+
+@font-face {
+  font-family: 'Complete in Him';
+  src: url('../fonts/Complete-in-Him.ttf') format('truetype');
 }
 
 img,
@@ -34,6 +43,10 @@ video {
 	margin-left: auto;
 }
 
+header {
+  position: relative;
+}
+
 #logo {
   float: left;
   padding: 0;
@@ -43,10 +56,10 @@ video {
 #top-right-menu {
   float: right;
   background: linear-gradient(to top, #a1d026, #49a10f 60%) no-repeat;
+  padding: 0;
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
-  padding: 0;
-  margin: 0 30px 0 0;
+  right: 30px;
 }
 
 #top-right-menu .nav-pills>li>a:hover {
@@ -64,7 +77,7 @@ video {
 @media only screen and (max-width: 768px) {
   #top-right-menu {
       float: none;
-      margin: 0;
+      right: 0;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
       padding: 0 5px 0 5px;
@@ -83,11 +96,20 @@ video {
   }
 }
 
+/* for menu toggle glyphicons to be visible */
 #collapsed {
-  display: inline-block;
-  z-index: 2;
-  float: right;
-  margin: 10px 0 0 auto;
+  display: none; /* on desktops and laptops */
+  text-align: right;
+  position: absolute;
+  padding: 0;
+  bottom: 10px;
+  right: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  #collapsed {
+    display: inline-block;
+  }
 }
 
 nav .nav-pills {
@@ -138,6 +160,24 @@ nav .nav-pills>li>a:hover {
   color: white;
 }
 
+.carousel-inner .item .carousel-caption {
+  font-family: 'Complete in Him';
+  position: absolute;
+  vertical-align: middle;
+  margin-right: 0;
+  left: auto;
+  right: 15%; top: 15%;
+  text-align: left;
+}
+
+.carousel-inner .item .carousel-caption h1 {
+  font-size: 66px;
+}
+
+.carousel-inner .item .carousel-caption h3 {
+  font-size: 40px;
+}
+
 #content {
   /*margin: 10px 0 10px 0;*/
   border-left: 15px solid white;
@@ -147,7 +187,7 @@ nav .nav-pills>li>a:hover {
 }
 
 #hpy-song {
-  background: linear-gradient(to top, #c0ee5f, white 50%) fixed no-repeat;
+  background: linear-gradient(to top, #c0ee5f, white 30%) fixed no-repeat;
   height: 500px;
 }
 
@@ -189,6 +229,11 @@ nav .nav-pills>li>a:hover {
   padding: 10px 10px 0 10px;
 }
 
+#para-1 p span,
+#chorus-2 .chorus-text p span {
+  padding: 0 3px 0 0;
+}
+
 .chorus-title {
   text-align: right;
   padding: 0;
@@ -204,8 +249,8 @@ nav .nav-pills>li>a:hover {
   margin: 60px auto 0 auto;
 }
 
-#winamp-sing-along {
-  margin: 70px auto 0 auto;
+#sing-along {
+  margin: 20px auto 0 auto;
 }
 
 #left-music img {
@@ -214,19 +259,22 @@ nav .nav-pills>li>a:hover {
   padding: 0 0 0 auto;
 }
 
-#winamp-sing-along img {
-  position: absolute;
+#winamp-sing-along {
   z-index: 1;
-  top: 0; bottom:80px; left: 0; right:0;
-  margin: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-#winamp-sing-along p {
+#sing-along p {
   text-align: center;
   font-size: 19px;
   font-weight: 700;
   color: #7b7b7b;
+}
 
+#sing-along p span {
+  display: inline-block;
 }
 
 /* media queries for HPY song content */
@@ -263,7 +311,7 @@ nav .nav-pills>li>a:hover {
     text-align: center;
   }
 
-  #winamp-sing-along p {
+  #sing-along p {
     font-size: 1.8em;
   }
 }
