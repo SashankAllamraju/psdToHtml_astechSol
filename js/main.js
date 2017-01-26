@@ -64,16 +64,27 @@ function calculateAndDisplayRoute(origin, destination, directionsService, direct
       if (status == google.maps.DirectionsStatus.OK) {
         for (var i = response.routes.length - 1, len = response.routes.length; i > -1; i--) {
           var strokeColor = (i > 0) ? '#726f68' : 'blue';
-          /* inforwindow yet to be fixed
+
+          /* infowindow with duration and distance for each route*/
+          /* doesn't update dynamically when a route is dragged. Needs to be fixed */
           var distance = response.routes[i].legs[0].distance.text;
           var duration = response.routes[i].legs[0].duration.text;
-          var infowindow = new google.maps.InfoWindow();
-          infowindow.setContent(" distance: "+distance+"<br> duration: "+duration+" ");
-          */
+
+          var step = 5;
+          var infowindow2 = new google.maps.InfoWindow();
+          infowindow2.setContent(
+            "<img src='./images/car.png' alt='for info window' style='width: 20px; height: 20px; padding-right: 1px;'>"+
+            "<span style='color: #d96042; font-size: 14px;'>"+duration+"</span><br>"+
+            "<span style='font-size: 10px; font-weight: 700;'>"+distance+"</span>");
+          infowindow2.setPosition(response.routes[i].legs[0].steps[step].end_location);
+          infowindow2.open(map);
+
+          /* render all routes */
           new google.maps.DirectionsRenderer({
             map: map,
             directions: response,
             routeIndex: i,
+            draggable: true,
             polylineOptions: {
               strokeColor: strokeColor,
               strokeOpacity: 0.9,
@@ -85,7 +96,6 @@ function calculateAndDisplayRoute(origin, destination, directionsService, direct
       }
   });
 }
-
 
 // for initializing map
 function initMap() {
